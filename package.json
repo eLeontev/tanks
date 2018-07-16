@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/eLeontev/tanks/issues"
   },
-  "homepage": "https://github.com/eLeontev/tanks#readme"
+  "homepage": "https://github.com/eLeontev/tanks#readme",
+  "devDependencies": {
+    "less": "^3.7.1"
+  }
 }

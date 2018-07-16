@@ -1,1 +1,2 @@
-alert(1)
+import './styles/index.less';
+import './app/app.js';

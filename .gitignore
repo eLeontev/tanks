@@ -69,3 +69,6 @@ node_modules
 
 # production build
 dist
+
+# no yarn
+yarn.lock

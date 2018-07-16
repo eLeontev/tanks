@@ -1,0 +1,19 @@
+{
+  "name": "thetanks",
+  "version": "1.0.0",
+  "description": "game \"the tanks\"",
+  "main": "index.js",
+  "scripts": {
+    "start-dev": "parcel index.html -p 3000"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eLeontev/tanks.git"
+  },
+  "author": "eLeontev",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/eLeontev/tanks/issues"
+  },
+  "homepage": "https://github.com/eLeontev/tanks#readme"
+}

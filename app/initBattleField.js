@@ -1,18 +1,12 @@
-import { CELLS_COUNT } from './config';
-import COLOURS from './constants/colours';
-import { randomInteger } from './util';
+import level1Map from './constants/levels/level1';
+import { VALUES, COLOURS }  from './constants/colours';
 
-console.log(randomInteger);
+export let battleField = level1Map.map((e, x) => 
+    e.map((type, y) => ({
+        position: { x, y },
+        fillStyle: COLOURS[VALUES[type]]
+    })));
 
-let battleField = new Array(CELLS_COUNT).fill()
-    .map((e, x) => new Array(CELLS_COUNT).fill()
-        .map((e, y) => ({
-            position: { x, y },
-            fillStyle: COLOURS[randomInteger()]
-        })));
-    
-let fillBattleFiled = (drowCell) => 
+export let fillBattleFiled = (drowCell) => 
     battleField.forEach((row) => 
         row.forEach((elem) => drowCell(false, elem)));
-
-export default fillBattleFiled;

@@ -1,5 +1,5 @@
 import { TANK_SIZE, CELLS_COUNT } from './config';
-import fillBattleFiled from './initBattleField';
+import { fillBattleFiled } from './initBattleField';
 import drowCellContent from './drowMethods';
 import onKeyPressHandler from './eventHandler';
 import Tank from './tank';
@@ -14,4 +14,4 @@ fillBattleFiled(drowCell);
 let tank = new Tank(cellSize * TANK_SIZE); 
 drowCell(tank.cellSize, tank);
 
-document.addEventListener('keydown', onKeyPressHandler(tank, ctx, drowCellContent));
+document.addEventListener('keydown', onKeyPressHandler(tank, ctx, cellSize, drowCellContent, () => fillBattleFiled(drowCell)));

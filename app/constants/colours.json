@@ -1,12 +1,18 @@
-[
-    "green", 
-    "red", 
-    "chocolate", 
-    "yellow", 
-    "orange", 
-    "beige",
-    "blue", 
-    "aliceblue", 
-    "antiquewhite", 
-    "aquamarine"
-]
+{
+    "VALUES": {
+        "0": "EMPTY",
+        "1": "BRICK",
+        "2": "CONCRETE",
+        "3": "TREE",
+        "4": "WATER",
+        "5": "EAGLE"
+    },
+    "COLOURS": {
+        "EMPTY": "#000",
+        "BRICK": "#954A13",
+        "CONCRETE": "#F1F5F6",
+        "TREE": "#8ADD07",
+        "WATER": "#403CFF",
+        "EAGLE": "#6C6062"
+    }
+}

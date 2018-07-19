@@ -3,7 +3,7 @@ import { getNextMoveDirection, isNextPositionFree } from './movmentsCalculation'
 
 let handleredKeyboardsKeys = Object.entries(KEYBOADS_DATA).map(([key, keyCode]) => keyCode);
 
-let isDrowing = false;
+let isDrowing = false; // disallow drow until new position is not drown
 let onKeyPressHandler = (tank, ctx, cellSize, drowCellContent, drowBatleField) => ({ keyCode }) => {
     let isKeyboardKeyNotSupported = handleredKeyboardsKeys.every(key => +key !== keyCode); 
     

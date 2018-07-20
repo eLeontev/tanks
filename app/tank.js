@@ -1,8 +1,22 @@
+import { TANK_SCALE } from './config';
+
 class Tank {
-    constructor(cellSize) {
+    constructor() {
         this.position = { x: 0, y: 0 };
         this.fillStyle = '#DBA42D';
-        this.cellSize = cellSize;
+		this.tankScale = TANK_SCALE;
+	}
+
+	addDrowFunction(drowCell) {
+        this.drowCell = drowCell;
+    }
+
+    drow() {
+        this.drowCell(this.getDrowData(), this.tankScale);
+    }
+
+	getDrowData() {
+        return (({ position, fillStyle }) => ({ position, fillStyle }))(this);
     }
 }
 

@@ -7,6 +7,6 @@ export let battleField = level1Map.map((e, x) =>
         fillStyle: COLOURS[VALUES[type]]
     })));
 
-export let fillBattleFiled = (drowCell) => 
+export let fillBattleFiled = (drowCell) =>
     battleField.forEach((row) => 
-        row.forEach((elem) => drowCell(false, elem)));
+        row.forEach((elem) => drowCell(elem)));

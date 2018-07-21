@@ -1,6 +1,9 @@
 import { CELLS_COUNT } from './config';
+import { ARROW_UP } from './constants/eventsConstant';
+import { COLOURS } from './constants/colours';
+
 import { fillBattleFiled } from './initBattleField';
-import drowCellContent from './drowMethods';
+import { drowCellContent, drowGun } from './drowMethods';
 import onKeyPressHandler from './eventHandler';
 import Tank from './tank';
 
@@ -14,7 +17,7 @@ let tank = new Tank();
 
 fillBattleFiled(drowCell);
 
-tank.addDrowFunction(drowCell);
-tank.drow();
+tank.addDrowFunction(drowCell, drowGun(ctx, cellSize));
+tank.drow(ARROW_UP);
 
 document.addEventListener('keydown', onKeyPressHandler(tank, ctx, () => fillBattleFiled(drowCell)));

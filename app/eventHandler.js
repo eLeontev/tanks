@@ -14,12 +14,12 @@ let onKeyPressHandler = (tank, ctx, drowBatleField) => ({ keyCode }) => {
 	let nextTankPosition = getNextMoveDirection(keyCode, position);
 
 	if (position !== nextTankPosition && isNextPositionFree(nextTankPosition)) {
-        tank.position = nextTankPosition;
-
-        drowBatleField();
-		tank.drow(); // drow new tank position
+        tank.position = nextTankPosition;    
     }
-    
+
+    drowBatleField();
+    tank.drow(keyCode); // drow tank position
+
     isDrowing = false;
 };
 

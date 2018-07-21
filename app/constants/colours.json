@@ -13,6 +13,8 @@
         "CONCRETE": "#F1F5F6",
         "TREE": "#8ADD07",
         "WATER": "#403CFF",
-        "EAGLE": "#6C6062"
+        "EAGLE": "#6C6062", 
+        "TANK": "#DBA42D",
+        "GUN": "#000"
     }
 }

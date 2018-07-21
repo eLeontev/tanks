@@ -1,4 +1,8 @@
 {
     "CELLS_COUNT": 52,
-    "TANK_SCALE": 4
+    "TANK_SCALE": 4,
+    "PLAYER_START_POSITION": {
+        "x": 16,
+        "y": 48
+    }
 }

@@ -8,15 +8,12 @@ class Tank {
 		this.tankScale = TANK_SCALE;
 	}
 
-	addDrowFunction(drowCell, drowGun) {
-        this.drowCell = drowCell;
+	addDrowFunction(drowGun) {
         this.drowGun = drowGun;
     }
 
-    drow(direction) {
-        let drowData = this.getDrowData();
-        this.drowCell(drowData, this.tankScale);
-        this.drowGun(drowData.position, direction);
+    drowGunDirection(direction) {
+        this.drowGun(this.getDrowData().position, direction);
     }
 
 	getDrowData() {

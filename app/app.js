@@ -15,9 +15,9 @@ let drowCell = drowCellContent(ctx, cellSize);
 
 let tank = new Tank();
 
-fillBattleFiled(drowCell);
+fillBattleFiled(drowCell, tank.getDrowData());
 
-tank.addDrowFunction(drowCell, drowGun(ctx, cellSize));
-tank.drow(ARROW_UP);
+tank.addDrowFunction(drowGun(ctx, cellSize));
+tank.drowGunDirection(ARROW_UP);
 
-document.addEventListener('keydown', onKeyPressHandler(tank, ctx, () => fillBattleFiled(drowCell)));
+document.addEventListener('keydown', onKeyPressHandler(tank, ctx, (tankData) => fillBattleFiled(drowCell, tankData)));

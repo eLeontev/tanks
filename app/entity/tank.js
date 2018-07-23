@@ -1,5 +1,5 @@
-import { TANK_SCALE, PLAYER_START_POSITION } from './config';
-import { COLOURS } from './constants/colours';
+import { TANK_SCALE, PLAYER_START_POSITION } from '../config';
+import { COLOURS } from '../constants/colours';
 
 class Tank {
     constructor() {

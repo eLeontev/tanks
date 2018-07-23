@@ -3,7 +3,7 @@ import { ARROW_UP } from './constants/eventsConstant';
 
 import Tank from './entity/tank';
 import { drowGun } from './drowMethods/drowGun';
-import { onKeyDownHandler } from './events/eventHandler';
+import { onMoveKeyDownHandler } from './events/eventHandler';
 import { drowCellContent } from './drowMethods/drowCellContent';
 import { drowBattleField } from './drowMethods/drowBattleField';
 import { updateTankPositionOnBattleField } from './calculations/updateTankPositionOnBattleField';
@@ -14,7 +14,7 @@ let ctx = playField.getContext('2d');
 let cellSize = playField.getAttribute('width') / CELLS_COUNT;
 let drowCell = drowCellContent(ctx, cellSize);
 
-let tank = new Tank();
+let tank = new Tank(ARROW_UP);
 tank.addDrowFunction(drowGun(ctx, cellSize));
 
 let updateAndDrowBattleField = (drowData) => {
@@ -23,6 +23,6 @@ let updateAndDrowBattleField = (drowData) => {
 };
 
 updateAndDrowBattleField(tank.getDrowData());
-tank.drowGunDirection(ARROW_UP);
+tank.drowGunDirection(tank.direction);
 
-document.addEventListener('keydown', onKeyDownHandler(tank, ctx, updateAndDrowBattleField));
+document.addEventListener('keydown', onMoveKeyDownHandler(tank, ctx, updateAndDrowBattleField));

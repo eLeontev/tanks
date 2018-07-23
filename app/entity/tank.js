@@ -2,10 +2,11 @@ import { TANK_SCALE, PLAYER_START_POSITION } from '../config';
 import { COLOURS } from '../constants/colours';
 
 class Tank {
-    constructor() {
+    constructor(direction) {
         this.position = PLAYER_START_POSITION;
         this.fillStyle = COLOURS.TANK;
-		this.tankScale = TANK_SCALE;
+        this.tankScale = TANK_SCALE;
+        this.direction = direction;
 	}
 
 	addDrowFunction(drowGun) {

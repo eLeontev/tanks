@@ -2,7 +2,7 @@ import { TANK_SCALE } from '../config';
 import { ARROW_DOWN, ARROW_LEFT, ARROW_RIGHT, ARROW_UP } from '../constants/eventsConstant';
 import { battleField } from '../entity/battleField';
 
-let CHECK_POSITIONS_BY_EVENT = {
+export let CHECK_POSITIONS_BY_EVENT = {
     [ARROW_LEFT]: new Array(1).fill()
         .map((e, offsetX) => new Array(TANK_SCALE).fill()
         .map((e, offsetY) => ({ offsetX, offsetY }))),

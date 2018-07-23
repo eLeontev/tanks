@@ -15,6 +15,7 @@
         "WATER": "#403CFF",
         "EAGLE": "#6C6062", 
         "TANK": "#DBA42D",
-        "GUN": "#000"
+        "GUN": "#000",
+        "BULLET": "#ADADAD"
     }
 }

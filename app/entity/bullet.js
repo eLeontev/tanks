@@ -6,6 +6,7 @@ export default class Bullet {
         this.position = position;
         this.direction = direction;
         this.fillStyle = COLOURS.BULLET;
+        this.isFirst = true; // to determinate is it first calculation
     }
 
     updatePosition(position) {

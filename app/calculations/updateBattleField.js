@@ -6,6 +6,7 @@ import { CHECK_POSITIONS_BY_EVENT } from './isNextPositionFree';
 let MIN = 0;
 let MAX = CELLS_COUNT;
 let CONCRETE = COLOURS.CONCRETE;
+
 export let updateBattleField = (keyCode, { x, y }) => {
     CHECK_POSITIONS_BY_EVENT[keyCode].forEach(e => e.forEach(({ offsetX, offsetY }) => { 
         let xPosition = x + offsetX;
@@ -13,12 +14,10 @@ export let updateBattleField = (keyCode, { x, y }) => {
         
         let inRange = xPosition >= MIN && xPosition < MAX 
             && yPosition >= MIN && yPosition < MAX;
-        
+
+        // TODO update to iteraction with other entities: bullets/tanks/eagle
         let isNotConcrete = battleField[xPosition][yPosition].fillStyle !== CONCRETE;
         
-        console.log(battleField[xPosition][yPosition].fillStyle)
-        console.log(`CONCRETE is: ${CONCRETE}`);
-        console.log(isNotConcrete)
         if (inRange && isNotConcrete ) {
             battleField[x + offsetX][y + offsetY].setFillStyle(COLOURS.EMPTY);
         }

@@ -4,7 +4,7 @@
   "description": "game \"the tanks\"",
   "main": "index.js",
   "scripts": {
-    "start-dev": "parcel index.html -p 3000"
+    "start-dev": "parcel index.html -p 3333"
   },
   "repository": {
     "type": "git",

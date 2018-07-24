@@ -1,7 +1,7 @@
 import { CELLS_COUNT } from '../config';
 import { COLOURS } from '../constants/colours';
 import { battleField } from '../entity/battleField';
-import { CHECK_POSITIONS_BY_EVENT } from './isNextPositionFree';
+import { CHECK_POSITIONS_BY_EVENT } from './isNextBulletPositionFree';
 
 let MIN = 0;
 let MAX = CELLS_COUNT;

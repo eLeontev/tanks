@@ -13,8 +13,8 @@ class Tank {
         this.drowGun = drowGun;
     }
 
-    drowGunDirection(direction) {
-        this.drowGun(this.getDrowData().position, direction);
+    drowGunDirection() {
+        this.drowGun(this.getDrowData().position, this.direction);
     }
 
 	getDrowData() {

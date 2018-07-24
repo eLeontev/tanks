@@ -18,7 +18,6 @@ let bulletPosition = {
     [ARROW_DOWN]: horizontalBulletPosition,
 };
 
-
 let EMPTY = COLOURS.EMPTY;
 let BULLET = COLOURS.BULLET;
 

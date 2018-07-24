@@ -5,6 +5,7 @@ import { clearPreviousTankPosition } from '../drowMethods/clearPreviousTankPosit
 
 import { spaceEventHandler } from './spaceEventHandler';
 
+let startAnimation = true;
 let bullets = {};
 let handledKeyboardsKeys = Object.entries(KEYBOADS_DATA).map(([key, keyCode]) => keyCode);
 
@@ -12,7 +13,7 @@ let isDrowing = false; // disallow to drow until new position is not drown
 export let onMoveKeyDownHandler = (tank, ctx, updateAndDrowBattleField) => ({ keyCode }) => {
     let isKeyboardKeyNotSupported = handledKeyboardsKeys.every(key => +key !== keyCode);
     
-    if (keyCode === 32) {
+    if (keyCode === 32) { // TODO replace on SPACE keyCode
         spaceEventHandler(tank.direction, tank.position, bullets);
     }
 
@@ -27,10 +28,17 @@ export let onMoveKeyDownHandler = (tank, ctx, updateAndDrowBattleField) => ({ ke
         tank.position = nextTankPosition;
     }
 
-    tank.direction = keyCode;    
-    updateAndDrowBattleField(tank.getDrowData());
-    tank.drowGunDirection(keyCode); // drow tank-gun
+    tank.direction = keyCode;
 
+    if (startAnimation) {
+        setInterval(() => {
+            updateAndDrowBattleField(tank.getDrowData());
+            tank.drowGunDirection(); // drow tank-gun        
+        }, 50);
+        
+        startAnimation = false;            
+    }
+    
     isDrowing = false;
 };
 

@@ -1,8 +1,8 @@
-import { TANK_SCALE } from '../config';
-import { ARROW_DOWN, ARROW_LEFT, ARROW_RIGHT, ARROW_UP } from '../constants/eventsConstant';
-import { battleField } from '../entity/battleField';
+import { TANK_SCALE } from '../../config';
+import { ARROW_DOWN, ARROW_LEFT, ARROW_RIGHT, ARROW_UP } from '../../constants/eventsConstant';
+import { isCheckedPositionsFree } from '../isCheckedPositionsFree';
 
-export let CHECK_POSITIONS_BY_EVENT = {
+export let BULLET_POSITIONS_BY_EVENT = {
     [ARROW_LEFT]: new Array(1).fill()
         .map((e, offsetX) => new Array(TANK_SCALE).fill()
         .map((e, offsetY) => ({ offsetX, offsetY }))),
@@ -17,7 +17,6 @@ export let CHECK_POSITIONS_BY_EVENT = {
         .map((e, offsetY) => ({ offsetX, offsetY })))
 };
 
-export let isNextBulletPositionFree = (keyCode, { x, y }) =>
-    CHECK_POSITIONS_BY_EVENT[keyCode].every(e => e
-        .every(({ offsetX, offsetY }) => battleField[x + offsetX][y + offsetY].isEmpty())
+export let isNextBulletPositionFree = (keyCode, position) => (
+    isCheckedPositionsFree(position, BULLET_POSITIONS_BY_EVENT[keyCode])
 );

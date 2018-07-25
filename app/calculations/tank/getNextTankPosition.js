@@ -1,5 +1,5 @@
-import { CELLS_COUNT, TANK_SCALE } from '../config';
-import { ARROW_DOWN, ARROW_LEFT, ARROW_RIGHT, ARROW_UP } from '../constants/eventsConstant';
+import { CELLS_COUNT, TANK_SCALE } from '../../config';
+import { ARROW_DOWN, ARROW_LEFT, ARROW_RIGHT, ARROW_UP } from '../../constants/eventsConstant';
 
 let STEP = 1;
 let START_VALUE = 0;

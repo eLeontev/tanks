@@ -1,12 +1,12 @@
-import { ARROW_DOWN, ARROW_LEFT, ARROW_RIGHT, ARROW_UP } from '../constants/eventsConstant';
-import { GUN_HEIGHT_RATE, GUN_OFFSET, GUN_SIZE } from '../constants/gunParameters';
-import { TANK_SCALE } from '../config';
+import { ARROW_DOWN, ARROW_LEFT, ARROW_RIGHT, ARROW_UP } from '../../constants/eventsConstant';
+import { GUN_HEIGHT_RATE, GUN_OFFSET, GUN_SIZE } from '../../constants/gunParameters';
+import { TANK_SCALE } from '../../config';
 
 let GUN_HEIGHT = TANK_SCALE / GUN_HEIGHT_RATE;
 let GUN_DIAMETR = GUN_SIZE * 2; // double radius
 let GUN_START_POSITION = TANK_SCALE - GUN_HEIGHT;
 
-export let getGunPosition = {
+let gunPosition = {
     [ARROW_UP]: ({ x, y }, cellSize) => ({
         xPosition: (x + GUN_OFFSET) * cellSize - GUN_SIZE,
         yPosition: y * cellSize,
@@ -32,3 +32,5 @@ export let getGunPosition = {
         height: GUN_DIAMETR
     }),
 };
+
+export let getGunPosition = (direction, position, cellSize) => gunPosition[direction](position, cellSize);

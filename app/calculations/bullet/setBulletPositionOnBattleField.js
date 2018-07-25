@@ -1,7 +1,7 @@
-import { TANK_SCALE } from '../config';
-import { COLOURS } from '../constants/colours';
-import { battleField } from '../entity/battleField';
-import { ARROW_DOWN, ARROW_LEFT, ARROW_RIGHT, ARROW_UP } from '../constants/eventsConstant';
+import { TANK_SCALE } from '../../config';
+import { COLOURS } from '../../constants/colours';
+import { battleField } from '../../entity/battleField';
+import { ARROW_DOWN, ARROW_LEFT, ARROW_RIGHT, ARROW_UP } from '../../constants/eventsConstant';
 
 let verticalBulletPosition = new Array(1).fill()
     .map((e, offsetX) => new Array(TANK_SCALE).fill()
